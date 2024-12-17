@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+img {
+  display: flex;
+  object-fit: cover;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../images/pexels-francesco-ungaro-673648.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow-x: hidden;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.window-container {
+  width: 1000px;
+  height: 800px;
+  border: solid 10px rgb(22, 11, 1);
+  position: relative;
+  top: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.window-container>div {
+  background-color: rgb(143, 240, 240);
+  border: solid 10px rgb(22, 11, 1);
+  opacity: 0.6;
+}
+
+
+
+.first-window, .second-window {
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  transition-property: transform;
+  transition-duration: 3s;
+  
+}
+
+input:checked + .first-window {
+  transform-origin: left top;
+  transform-origin: left bottom;
+  transform: rotateY(75deg);
+}
+
+input:checked + .first-window + .second-window {
+  transform-origin: right top;
+  transform-origin: right bottom;
+  transform: rotateY(-75deg);
+}
+
+input {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 800px;
+}
+
+.window-container>div {
+  width: 470px;
+  height: 770px;
+}
+
+.main img {
+  width: 400px;
+  height: 400px;
+}
+
+h2 {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 240px;
+  right: 70px;
+
+  transition-delay: 0s;
+  transition-property: transform;
+  transition-timing-function: linear;
+  transition-duration: 5s;
+}
+
+h2:hover {
+  transform: rotate(360deg);
+}
+
+h2:hover + img {
+  left: 85rem;
+  bottom: 55rem;
+}
+
+/* h2:hover ~ .window-container {
+  left: -100%;
+} */
+
+.cloun {
+  position: absolute;
+  left: -100%;
+  bottom: -100%;
+  transition-delay: 5s;
+}
